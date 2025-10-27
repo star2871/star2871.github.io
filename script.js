@@ -1,5 +1,19 @@
-// 페이지 로드 시 localStorage에서 시간표 불러오기
+// 1. 페이지 로드 시 localStorage에서 시간표 불러오기
 document.addEventListener('DOMContentLoaded', loadSchedule);
+
+// 2. DOM이 완전히 로드된 후 '추가' 버튼에 리스너 연결
+document.addEventListener('DOMContentLoaded', () => {
+    // HTML에서 id="addButton"을 가진 버튼을 찾습니다.
+    const addButton = document.getElementById('addButton');
+    
+    // 버튼이 존재하는지 확인하고, 클릭 이벤트를 연결합니다.
+    if (addButton) {
+        addButton.addEventListener('click', addSchedule);
+    } else {
+        // 이 메시지가 콘솔에 보이면 HTML의 ID가 잘못된 것입니다.
+        console.error("오류: ID 'addButton'을 가진 버튼을 찾을 수 없습니다. HTML을 확인하세요.");
+    }
+});
 
 function getSavedSchedule() {
     // localStorage에서 데이터를 가져와 JSON 객체로 변환, 없으면 빈 배열 반환
