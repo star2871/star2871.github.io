@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>간단 웹 플래너</title>
+    <title>나만의 하루 시간표 🗓️</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="planner-container">
-        <h1>오늘의 할 일 📝</h1>
-        <input type="text" id="todoInput" placeholder="새 할 일을 입력하세요">
-        <button onclick="addTodo()">추가</button>
-        <ul id="todoList">
-            <li>산책하기 <span class="delete" onclick="deleteTodo(this)">❌</span></li>
-            <li>GitHub Actions 설정 완료하기 <span class="delete" onclick="deleteTodo(this)">❌</span></li>
-        </ul>
+        <h1>나만의 하루 시간표 🗓️</h1>
+        <div class="input-group">
+            <input type="time" id="timeInput" required>
+            <input type="text" id="activityInput" placeholder="활동 내용을 입력하세요" required>
+            <button onclick="addSchedule()">추가</button>
+        </div>
+        
+        <ul id="scheduleList">
+            </ul>
     </div>
     <script src="script.js"></script>
 </body>
