@@ -12,21 +12,35 @@ body {
     background: white;
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     width: 100%;
-    max-width: 400px;
+    max-width: 600px;
 }
 
 h1 {
     text-align: center;
     color: #333;
+    margin-bottom: 25px;
+}
+
+.input-group {
+    display: flex;
+    gap: 5px;
     margin-bottom: 20px;
 }
 
+#timeInput {
+    flex-shrink: 0;
+    width: 90px;
+}
+
+#activityInput {
+    flex-grow: 1;
+}
+
+input[type="time"],
 input[type="text"] {
-    width: calc(100% - 70px);
     padding: 10px;
-    margin-right: 5px;
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 16px;
@@ -34,29 +48,30 @@ input[type="text"] {
 
 button {
     padding: 10px 15px;
-    background-color: #5cb85c;
+    background-color: #007bff; /* 파란색 계열로 변경 */
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s;
+    flex-shrink: 0;
 }
 
 button:hover {
-    background-color: #4cae4c;
+    background-color: #0056b3;
 }
 
-#todoList {
+#scheduleList {
     list-style: none;
     padding: 0;
-    margin-top: 20px;
 }
 
-#todoList li {
-    background: #e9e9e9;
-    padding: 10px;
+#scheduleList li {
+    background: #e9efff;
+    padding: 12px 15px;
     margin-bottom: 8px;
+    border-left: 5px solid #007bff; /* 시간표 느낌 강조 */
     border-radius: 4px;
     display: flex;
     justify-content: space-between;
@@ -64,12 +79,20 @@ button:hover {
     transition: background 0.3s;
 }
 
-#todoList li:hover {
-    background: #dcdcdc;
+.time-slot {
+    font-weight: bold;
+    color: #0056b3;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.activity-content {
+    flex-grow: 1;
 }
 
 .delete {
     cursor: pointer;
     color: #cc0000;
     font-weight: bold;
+    margin-left: 10px;
 }
